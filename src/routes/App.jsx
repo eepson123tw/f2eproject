@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 
-export default function Root() {
+export default function App() {
   const [count, setCount] = useState(0);
   const comp = useRef();
 

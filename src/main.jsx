@@ -1,21 +1,15 @@
 // @ts-nocheck
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Root from './routes/root';
-import ErrorPage from './pages/ErrorPage';
-import './index.css';
-import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
+import App from './routes/App';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Root />
-    // errorElement: <ErrorPage />
-  }
-]);
+import './index.css';
+import { HashRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <HashRouter>
+      <App />
+    </HashRouter>
   </React.StrictMode>
 );
