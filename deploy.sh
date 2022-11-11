@@ -6,8 +6,10 @@ npm run build
 
 cd dist
 
+echo > .nojekyll
+
 git init
-git checkout -b master
+git checkout -B main
 git add -A
 git commit -m 'deploy'
 
