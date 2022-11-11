@@ -1,9 +1,8 @@
 import React from 'react';
 import { useState, useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
-import './App.css';
 
-function App() {
+function AdsPage() {
   const [count, setCount] = useState(0);
   const comp = useRef();
 
@@ -17,7 +16,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="AdsPage">
       <div className="div" ref={comp}>
         <h1 className="box  flex h-20 w-[200px] flex-1 bg-red-100">123123123123123123123</h1>
       </div>
@@ -25,4 +24,4 @@ function App() {
   );
 }
 
-export default App;
+export default AdsPage;
