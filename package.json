@@ -3,13 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://eepson123tw.github.io/f2eproject",
+  "homepage": "https://eepson123tw.github.io",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint --fix",
-    "deploy": "gh-pages -d build"
+    "lint": "eslint --fix"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.42.1",
