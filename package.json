@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint --fix"
+    "lint": "eslint --fix",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.42.1",
