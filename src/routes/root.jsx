@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 
-function AdsPage() {
+export default function Root() {
   const [count, setCount] = useState(0);
   const comp = useRef();
 
@@ -23,5 +23,3 @@ function AdsPage() {
     </div>
   );
 }
-
-export default AdsPage;

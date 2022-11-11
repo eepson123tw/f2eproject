@@ -1,15 +1,15 @@
 // @ts-nocheck
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import AdsPage from './Page/AdsPage';
-import ErrorPage from './Page/ErrorPage';
+import Root from './routes/root';
+import ErrorPage from './routes/ErrorPage';
 import './index.css';
 import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <AdsPage />,
+    element: <Root />,
     errorElement: <ErrorPage />
   }
 ]);

@@ -14,6 +14,6 @@
     },
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/**/*", "prettier.config.js", "src/Page/M.jsx"],
+  "include": ["src/**/*", "prettier.config.js", "src/routes/M.jsx"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
