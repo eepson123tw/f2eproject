@@ -3,10 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://eepson123tw.github.io",
+  "homepage": "https://eepson123tw.github.io/f2eproject",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --base=./",
     "preview": "vite preview",
     "lint": "eslint --fix",
     "deploy": "gh-pages -d dist"
