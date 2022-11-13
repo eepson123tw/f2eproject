@@ -6,10 +6,8 @@ export default function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="/" element={<FirstPage />} />
-          <Route path="*" element={<SecondPage />} />
-        </Route>
+        <Route path="/" element={<FirstPage />}></Route>
+        <Route path="/secondPage" element={<SecondPage />} />
       </Routes>
     </>
   );
