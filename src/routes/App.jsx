@@ -1,25 +1,20 @@
 import React from 'react';
-import { useState, useRef, useLayoutEffect } from 'react';
-import { gsap } from 'gsap';
-
+import { Routes, Route, Outlet, Navigate, Link, useSearchParams } from 'react-router-dom';
+import FirstPage from './FirstPage';
+import SecondPage from './SecondPage';
 export default function App() {
-  const [count, setCount] = useState(0);
-  const comp = useRef();
-
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.to('.box', { rotation: '+=360' });
-      // ScrollTrigger.create({ trigger: '#my-id' });
-    }, comp);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <div className="AdsPage">
-      <div className="div" ref={comp}>
-        <h1 className="box  flex h-20 w-[200px] flex-1 bg-red-100">123123123123123123123</h1>
-      </div>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<FirstPage />} />
+          <Route path="*" element={<SecondPage />} />
+        </Route>
+      </Routes>
+    </>
   );
+}
+
+function Layout() {
+  return <Outlet />;
 }

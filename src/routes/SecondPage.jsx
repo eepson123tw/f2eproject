@@ -1,8 +1,5 @@
-import { useRouteError } from 'react-router-dom';
 import React from 'react';
-export default function ErrorPage() {
-  const error = useRouteError();
-
+export default function SecondPage() {
   return (
     <div className="flex h-[100%] items-center justify-center bg-black">
       <div
@@ -11,9 +8,6 @@ export default function ErrorPage() {
       >
         <h1 className=" text-[5rem]">Oops!</h1>
         <p className=" text-2xl font-bold">Sorry, an unexpected error has occurred.</p>
-        <p className="  font-extrabold text-red-400">
-          <i>{error.statusText || error.message}</i>
-        </p>
       </div>
     </div>
   );

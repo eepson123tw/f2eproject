@@ -6,7 +6,7 @@
   "homepage": "https://eepson123tw.github.io/f2eproject",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=./",
+    "build": "vite build ",
     "preview": "vite preview",
     "lint": "eslint --fix",
     "deploy": "gh-pages -d dist"
