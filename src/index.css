@@ -12,3 +12,37 @@ html,body{
   height: 100%;
   font-family: 'Noto Sans TC', sans-serif;
 }
+
+
+
+.loader {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 40%;
+}
+
+.text {
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  animation: animationTEXT 25s linear infinite;
+}
+.text b {
+  position: absolute;
+  display: block;
+  transform-origin: 0 325px;
+  left: 50%;
+  font-weight: normal;
+  font-size: 10vh;
+}
+@keyframes animationTEXT {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
