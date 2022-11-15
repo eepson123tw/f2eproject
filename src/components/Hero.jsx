@@ -13,7 +13,7 @@ export default function Hero() {
       gsap.to('.loader', {
         delay: 1.3,
         duration: 1,
-        scale: 1
+        scale: 6
       });
       textTimeline.to('.text_hero', {
         opacity: 0,
