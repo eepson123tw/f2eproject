@@ -27,14 +27,15 @@ export default function Hero() {
       });
       timeline.to('.bg', {
         backgroundSize: '120%',
-        backgroundPosition: '0 0',
         delay: 1.3,
         alpha: 0,
         ease: 'linear',
         duration: 1.5
       });
       timeline.to('.bg', {
-        backgroundImage: `url(${background})`,
+        scale: 1.2,
+        backgroundPosition: '50px 0',
+        // backgroundImage: `url(${background})`,
         ease: 'linear',
         alpha: 1,
         duration: 1
