@@ -13,7 +13,7 @@ export default function Hero() {
       gsap.to('.loader', {
         delay: 1.3,
         duration: 1,
-        scale: 6
+        scale: 1
       });
       textTimeline.to('.text_hero', {
         opacity: 0,
@@ -35,7 +35,6 @@ export default function Hero() {
       timeline.to('.bg', {
         scale: 1.2,
         backgroundPosition: '50px 0',
-        // backgroundImage: `url(${background})`,
         ease: 'linear',
         alpha: 1,
         duration: 1
@@ -48,14 +47,9 @@ export default function Hero() {
     let text = document.querySelector('.text p');
     text.innerHTML = text.innerText
       .split('')
-      .map((char, i) => `<b style="transform:rotate(${i * 10}deg)">${char}</b>`)
+      .map((char, i) => `<b style="transform:rotate(${i * 20}deg)">${char}</b>`)
       .join('');
   }, []);
-
-  // setTimeout(() => {
-  //   dos();
-  //   console.log(hasShow);
-  // }, 100);
 
   return (
     <div ref={app} className="relative flex h-[calc(100vh-96px)] items-center justify-center overflow-hidden">
