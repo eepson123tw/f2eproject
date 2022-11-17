@@ -1,8 +1,10 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import SignUp from '../components/SignUp';
 export default function FirstPage() {
   return (
-    <div>
+    <div className="relative">
+      <SignUp></SignUp>
       <nav className="px-6 py-5">
         <ul className="flex items-center font-bold">
           <li className="mr-auto text-2xl">TheF2E</li>
