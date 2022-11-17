@@ -7,10 +7,26 @@ html,body{
   height: 100%;
 
 }
+::-webkit-scrollbar {
+  width: 12px;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #000;
+}
 
 #root{
   height: 100%;
   font-family: 'Noto Sans TC', sans-serif;
+}
+.seo_hidden{
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 
