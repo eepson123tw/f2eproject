@@ -15,7 +15,3 @@ export default function App() {
     </>
   );
 }
-
-function Layout() {
-  return <Outlet />;
-}

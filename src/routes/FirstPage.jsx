@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import SignUp from '../components/SignUp';
 import QsSection from '../components/QsSection';
-
+import Cooperation from '../components/Cooperation';
 export default function FirstPage() {
   return (
     <div className="relative">
@@ -29,6 +29,7 @@ export default function FirstPage() {
       </nav>
       <Hero></Hero>
       <QsSection></QsSection>
+      <Cooperation></Cooperation>
     </div>
   );
 }

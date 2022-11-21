@@ -5,7 +5,7 @@ export default function QsSection() {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const a = gsap.to('.animation_ScrollBg', {
-        y: '50%',
+        y: '20%',
         duration: 10,
         scrollTrigger: {
           trigger: '.animation_ScrollArea',

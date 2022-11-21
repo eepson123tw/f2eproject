@@ -83,7 +83,7 @@ html,body{
   mix-blend-mode: darken;
 }
 .animation_text{
-  color: #fff;
+  color: white;
   background: #000; 
    overflow: hidden;
 }
