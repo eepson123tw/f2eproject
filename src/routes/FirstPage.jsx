@@ -3,9 +3,11 @@ import Hero from '../components/Hero';
 import SignUp from '../components/SignUp';
 import QsSection from '../components/QsSection';
 import Cooperation from '../components/Cooperation';
+import DesignFlow from '../components/DesignFlow';
+
 export default function FirstPage() {
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <h1 className="seo_hidden">F2E</h1>
       <SignUp></SignUp>
       <nav className="px-6 py-5">
@@ -30,6 +32,7 @@ export default function FirstPage() {
       <Hero></Hero>
       <QsSection></QsSection>
       <Cooperation></Cooperation>
+      <DesignFlow></DesignFlow>
     </div>
   );
 }

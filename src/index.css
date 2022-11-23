@@ -89,3 +89,27 @@ html,body{
 }
 
 
+.sectionX {
+  font-size: 5rem;
+}
+.section--large {
+  width: 100vw;
+  background-color: #8d3dae;
+  color: white;
+}
+.section--small {
+  width: 46rem;
+}
+.section--dark {
+  color: white;
+  background-color: black;
+}
+.sectionX.active{
+  background-color: red;
+}
+
+section {
+  font-weight: 900;
+  transition: color 0.3s;
+}
+

@@ -10,20 +10,22 @@ export default function Cooperation() {
           trigger: '.cooperation',
           start: 'top center',
           end: 'center',
-          markers: true,
           scrub: true
         }
       });
-      tl.from('.imgAnimation', {
-        alpha: 0,
-        ease: 'power4.out',
-        duration: 2
-      });
-      tl.from('.imgAnimation', {
-        alpha: 1,
-        ease: 'power4.out',
-        duration: 1
-      });
+      tl.fromTo(
+        '.imgAnimation',
+        {
+          alpha: 0,
+          ease: 'power4.out',
+          duration: 2
+        },
+        {
+          alpha: 1,
+          ease: 'power4.out',
+          duration: 1
+        }
+      );
     });
     return () => ctx.revert();
   }, []);
@@ -35,45 +37,46 @@ export default function Cooperation() {
           trigger: '.cooperation',
           start: 'top center',
           end: 'center',
-          markers: true,
           scrub: true
         }
       });
       const t3 = gsap.timeline({
         scrollTrigger: {
           trigger: '.cooperation',
-          start: 'top center',
-          end: 'center',
-          markers: true,
+          start: 'top 20%',
+          end: 'top 24%',
           scrub: true
         }
       });
-      t2.from('.feText', {
-        x: -5000,
-        // rotate: 180,
-        ease: 'elastic.out(1, 0.3)',
-        duration: 5
-      });
-      t2.from('.feText', {
-        ease: 'elastic.out(1, 0.3)',
-        duration: 5
-      });
-      t3.from('.uiText', {
-        rotate: 180,
-        opacity: 0,
-        duration: 3,
-        ease: 'elastic.out(1, 0.3)'
-      });
-      t3.from('.uiText', {
-        ease: 'elastic.out(1, 0.3)',
-        duration: 3
-      });
+      t2.fromTo(
+        '.feText',
+        {
+          x: -100
+        },
+        {
+          x: 0,
+          ease: 'elastic.out(1, 0.3)',
+          duration: 1
+        }
+      );
+
+      t3.fromTo(
+        '.uiText',
+        {
+          rotate: 30
+        },
+        {
+          rotate: 0,
+          ease: 'elastic.out(1, 0.3)',
+          duration: 1
+        }
+      );
     });
     return () => ctx.revert();
   }, []);
 
   return (
-    <section className="cooperation flex h-[80vh] px-[224px] py-[107px]">
+    <section className="cooperation flex h-[80vh] overflow-hidden px-[224px] py-[107px]">
       <h2 className="seo_hidden">互相合作</h2>
       <div className="flex flex-1">
         <div className="ui mr-2 flex h-[600px] flex-col justify-between">
@@ -86,9 +89,7 @@ export default function Cooperation() {
               backgroundSize: 'contain'
             }}
           ></div>
-          <p className="feText inline-block bg-black p-[10px]  text-center text-[40px] text-white">
-            Front-End Engineer
-          </p>
+          <p className="feText inline-block bg-black p-[10px]  text-center  text-white">Front-End Engineer</p>
         </div>
         <div className="fe flex h-[600px] flex-col justify-between">
           <div
@@ -100,7 +101,7 @@ export default function Cooperation() {
               backgroundSize: '100%'
             }}
           ></div>
-          <p className="uiText inline-block bg-black p-[10px] text-center text-[40px] text-white">UI / UX Designer</p>
+          <p className="uiText inline-block bg-black p-[10px] text-center  text-white">UI / UX Designer</p>
         </div>
       </div>
       <div className="flex flex-1 flex-col items-center justify-end  text-center">
