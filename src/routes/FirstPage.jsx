@@ -4,7 +4,7 @@ import SignUp from '../components/SignUp';
 import QsSection from '../components/QsSection';
 import Cooperation from '../components/Cooperation';
 import DesignFlow from '../components/DesignFlow';
-
+import TimeLine from '../components/TimeLine';
 export default function FirstPage() {
   return (
     <div className="relative overflow-hidden">
@@ -33,6 +33,7 @@ export default function FirstPage() {
       <QsSection></QsSection>
       <Cooperation></Cooperation>
       <DesignFlow></DesignFlow>
+      <TimeLine></TimeLine>
     </div>
   );
 }

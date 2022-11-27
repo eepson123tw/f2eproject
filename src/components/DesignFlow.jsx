@@ -42,6 +42,7 @@ export default function DesignFlow() {
       </div>
       <div className="target h-[500px] ">
         <section className="content" id="content">
+          <h2 className="seo_hidden">三大主題來襲</h2>
           {list.map((d, i) => (
             <div className="blockBox ">
               <div className="item relative  flex h-[100%] flex-1 flex-col ">
