@@ -6,6 +6,8 @@ import Cooperation from '../components/Cooperation';
 import DesignFlow from '../components/DesignFlow';
 import TimeLine from '../components/TimeLine';
 import Awards from '../components/Awards';
+import Footer from '../components/Footer';
+
 export default function FirstPage() {
   return (
     <div className="relative overflow-hidden">
@@ -36,6 +38,7 @@ export default function FirstPage() {
       <DesignFlow></DesignFlow>
       <TimeLine></TimeLine>
       <Awards></Awards>
+      <Footer></Footer>
     </div>
   );
 }
