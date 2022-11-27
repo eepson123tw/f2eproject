@@ -207,8 +207,9 @@ html,body{
 
 .timeline li:hover p {
   color: rgb(255, 25, 25);
+  font-weight: 800;
   transition: all .3s;
-  transform: scale(1.5);
+  transform: scale(1.25);
 }
 
 

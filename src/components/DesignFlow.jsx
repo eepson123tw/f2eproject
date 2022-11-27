@@ -44,12 +44,12 @@ export default function DesignFlow() {
         <section className="content" id="content">
           <h2 className="seo_hidden">三大主題來襲</h2>
           {list.map((d, i) => (
-            <div className="blockBox ">
+            <div className="blockBox " key={i}>
               <div className="item relative  flex h-[100%] flex-1 flex-col ">
-                <p className="item_title flex justify-between">
+                <div className="item_title flex justify-between">
                   {d.title}
-                  <div className="relative -top-5 -right-5 h-[150px] w-[150px] bg-white"></div>
-                </p>
+                  <p className="relative -top-5 -right-5 h-[150px] w-[150px] bg-white"></p>
+                </div>
                 <p className="item_text text-[40px] "> {d.text}</p>
                 <p className="mb-2">{d.tag}</p>
                 <p className=" flex items-center">
