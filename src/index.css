@@ -241,3 +241,32 @@ html,body{
   top: -100px;
 
 }
+/* second */
+
+li.dot{
+  position: relative;
+  bottom: 10px;
+}
+
+li.dot:not(:last-child)::after{
+  display: block;
+  position: absolute;
+  content: "";
+  width: 120px;
+  height: 3px;
+  background:#fff;
+  top:-10px;
+  left:120px;
+}
+
+li.dot::before{
+  position: absolute;
+  content: "";
+  width: 16px;
+  height: 16px;
+  display: block;
+  background:#fff;
+  border-radius: 50%;
+  top: -30px;
+  left: 35%;
+}

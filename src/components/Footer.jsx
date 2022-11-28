@@ -10,8 +10,9 @@ export default function Footer() {
     <div className="h-[40vh] bg-black py-[50px] text-center text-white">
       <h2 className="mb-5 text-[40px] font-bold">贊助單位</h2>
       <div className="flex justify-center">
-        {list.map((d) => (
+        {list.map((d, i) => (
           <div
+            key={i}
             className="imgAnimation mx-6 h-[200px] w-[200px]"
             style={{
               backgroundImage: `url(${d.url})`,
