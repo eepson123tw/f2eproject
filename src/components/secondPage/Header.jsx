@@ -15,9 +15,9 @@ export default function Header() {
           }}
         ></li>
         <li className="mx-4 cursor-pointer rounded-sm bg-black py-2 px-6 text-white">服務介紹</li>
-        <li className="mx-4 cursor-pointer rounded-sm bg-black py-2 px-6 text-white">服務介紹</li>
-        <li className="mx-4 cursor-pointer rounded-sm bg-black py-2 px-6 text-white">服務介紹</li>
-        <li className="mx-4 cursor-pointer rounded-sm bg-black py-2 px-6 text-white">服務介紹</li>
+        <li className="mx-4 cursor-pointer rounded-sm bg-black py-2 px-6 text-white">簽署文件</li>
+        <li className="mx-4 cursor-pointer rounded-sm bg-black py-2 px-6 text-white">註冊</li>
+        <li className="mx-4 cursor-pointer rounded-sm bg-black py-2 px-6 text-white">登入</li>
       </ul>
     </header>
   );

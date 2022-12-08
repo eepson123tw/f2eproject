@@ -270,3 +270,50 @@ li.dot::before{
   top: -30px;
   left: 35%;
 }
+/*  */
+.process li{
+  position: relative;
+  transition: 0.5s all;
+}
+
+
+
+.process li::before{
+  position: absolute;
+  display: block;
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: #000;
+  border-radius: 50%;
+  top: -25px;
+  left: 45%;
+  transition: 0.5s all;
+
+}
+.process li:not(:last-child):after{
+  transition: 0.5s all;
+
+  position: absolute;
+  display: block;
+  content: "";
+  width: 221px;
+  height: 2px;
+  background: #000;
+  border-radius: 50%;
+  top: 15px;
+  left:125%;
+}
+
+.process li.active {
+  color:#6C8268 ;
+}
+.process li.active::before,.process li.active::after{
+  background: #6C8268;
+}
+/*  */
+
+.tab li.active {
+  background: #000;
+  color: white;
+}

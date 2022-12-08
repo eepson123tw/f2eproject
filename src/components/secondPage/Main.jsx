@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import hero from '../../assets/secondpage/hero.svg';
-
+import { modalContext } from '../../utils/modalContext';
 export default function Main() {
+  const { setShow } = useContext(modalContext);
   return (
     <main
       className="flex h-[100%] w-[100%] items-start justify-center bg-black py-[200px] text-center"
@@ -24,7 +25,10 @@ export default function Main() {
         </ul>
         <div>
           <p className="mb-4 font-light ">只需三步驟，立即簽署您的文件！</p>
-          <button className="inline-block rounded bg-white px-[65.5px] py-[19px] font-bold text-black">
+          <button
+            className="inline-block rounded bg-white px-[65.5px] py-[19px] font-bold text-black"
+            onClick={(d) => setShow((d) => !d)}
+          >
             立即簽署文件
           </button>
         </div>
