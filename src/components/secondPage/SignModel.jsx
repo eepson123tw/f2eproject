@@ -23,7 +23,6 @@ export default function SignModel() {
 
     let isPainting = false;
 
-    // 取得滑鼠 / 手指在畫布上的位置
     function getPaintPosition(e) {
       const canvasSize = canvas.getBoundingClientRect();
       if (e.type === 'mousemove') {
@@ -39,19 +38,16 @@ export default function SignModel() {
       }
     }
 
-    // 開始繪圖時，將狀態開啟
     function startPosition(e) {
       e.preventDefault();
       isPainting = true;
     }
 
-    // 結束繪圖時，將狀態關閉，並產生新路徑
     function finishedPosition() {
       isPainting = false;
       ctx.beginPath();
     }
 
-    // 繪圖過程
     function draw(e) {
       // 滑鼠移動過程中，若非繪圖狀態，則跳出
       if (!isPainting) return;
@@ -62,7 +58,6 @@ export default function SignModel() {
       ctx.stroke();
     }
 
-    // 重新設定畫布
     function reset() {
       ctx.clearRect(0, 0, 1200, 800);
       ctx.fillStyle = '#fff';
