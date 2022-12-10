@@ -12,10 +12,13 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@react-pdf-viewer/core": "3.9.0",
+    "@react-pdf-viewer/default-layout": "^3.9.0",
     "@typescript-eslint/eslint-plugin": "^5.42.1",
     "babel-eslint": "^10.1.0",
     "gh-pages": "^4.0.0",
     "gsap": "^3.11.3",
+    "pdfjs-dist": "3.1.81",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-pdf": "^6.2.0",
