@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import hero from '../../assets/secondpage/hero.svg';
+import background from '../../assets/secondpage/background.svg';
 import { modalContext } from '../../utils/modalContext';
 export default function Main() {
   const { setShow } = useContext(modalContext);
@@ -7,10 +7,10 @@ export default function Main() {
     <main
       className="flex h-[100%] w-[100%] items-start justify-center bg-black py-[200px] text-center"
       style={{
-        backgroundImage: `url(${hero})`,
+        backgroundImage: `url(${background})`,
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center 10%',
-        backgroundSize: 'contain'
+        backgroundSize: 'cover'
       }}
     >
       <div className="text-white">

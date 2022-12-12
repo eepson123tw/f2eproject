@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
-
+import { useSearchParams } from 'react-router-dom';
 import { modalContext } from '../../utils/modalContext';
 export default function ProcessModal() {
   const { hasShow, setShow } = useContext(modalContext);
-
+  let [searchParams, setSearchParams] = useSearchParams();
   let [processCount, setProcessCount] = useState(0);
 
   const setCount = () => {
@@ -12,6 +12,12 @@ export default function ProcessModal() {
       if (d > 2) {
         d = 0;
       }
+
+      setTimeout(() => {
+        setSearchParams({ methods: 'sign' });
+        setShow(false);
+      }, 500);
+
       return d;
     });
   };
@@ -37,7 +43,7 @@ export default function ProcessModal() {
               >
                 上傳PDF檔案
               </button>
-              <p>從你 的裝置直接上傳PDF檔案。</p>
+              <p>從你的裝置直接上傳PDF檔案。</p>
             </div>
             <div className="">
               <button className="mb-2 rounded-xl bg-[#6C8268] py-[19px] px-[65.5px] text-[32px] font-bold text-white">
