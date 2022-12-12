@@ -9,19 +9,19 @@ import { modalContext } from '../utils/modalContext';
 import { useSearchParams } from 'react-router-dom';
 export default function SecondPage() {
   const [hasShow, setShow] = useState(false);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [hasSignModelShow, setSignModel] = useState(true);
+  const [searchParams, setSignModelShow] = useSearchParams();
 
   let hasMethods = searchParams.get('methods') === 'sign';
 
   return (
     <div className="h-[100vh] overflow-hidden">
       <Header></Header>
-      <modalContext.Provider value={{ hasShow, setShow }}>
+      <modalContext.Provider value={{ hasShow, setShow, hasSignModelShow, setSignModel }}>
         {!hasMethods && <Main></Main>}
         {hasMethods && <Pdf></Pdf>}
-
         <ProcessModal></ProcessModal>
-        {/* <SignModel></SignModel> */}
+        <SignModel></SignModel>
       </modalContext.Provider>
     </div>
   );

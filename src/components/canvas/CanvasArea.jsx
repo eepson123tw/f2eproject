@@ -1,8 +1,11 @@
 import React, { useContext, useState, useRef, useEffect } from 'react';
+import { modalContext } from '../../utils/modalContext';
 export default function CanvasArea(props) {
   const canvasRef = useRef(null);
   // let isPainting = false;
   let [isPainting, setPainting] = useState(false);
+  const { hasSignModelShow, setSignModel } = useContext(modalContext);
+
   const buttonClass = `z-5 resetBtn absolute right-5 top-4 rounded ${
     isPainting ? ' bg-[#6C8268]' : ' bg-[#CFCFCF]'
   } py-1 px-2 text-[12px] ${isPainting ? 'text-white' : 'text-black'} `;
@@ -19,6 +22,7 @@ export default function CanvasArea(props) {
     const canvas = canvasRef.current;
     const newImg = canvas.toDataURL('image/png');
     localStorage.setItem(props.imgName, newImg);
+    setSignModel(false);
   }
   useEffect(() => {
     const canvas = canvasRef.current;
