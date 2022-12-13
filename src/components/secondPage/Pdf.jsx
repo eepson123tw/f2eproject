@@ -1,16 +1,15 @@
-import React, { useRef, useEffect, useState } from 'react';
-import PDF from '../../assets/read.pdf';
+import React, { useRef, useEffect, useState, useContext } from 'react';
 import { fabric } from 'fabric';
 import { Viewer, SpecialZoomLevel } from '@react-pdf-viewer/core';
 import { Worker } from '@react-pdf-viewer/core';
 import { defaultLayoutPlugin, ToolbarProps } from '@react-pdf-viewer/default-layout';
-
+import { modalContext } from '../../utils/modalContext';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 export default function Pdf() {
+  const { file, setFile } = useContext(modalContext);
   const viewerRef = useRef(null);
-  let [pdf, setPdf] = useState(PDF);
 
   const drawSign = () => {
     const canvastw = new fabric.Canvas(document.querySelector('#canvasTw'));
@@ -51,21 +50,19 @@ export default function Pdf() {
     };
   };
 
-  const fileChange = (e) => {
-    if (e.target.files[0] === undefined) return;
-    // 透過 input 所選取的檔案
-    const file = e.target.files[0];
-    // 產生fileReader物件
-    const fileReader = new FileReader();
-    // 將資料做處理
-    fileReader.readAsArrayBuffer(file);
-    // 綁入事件監聽
-    fileReader.addEventListener('load', () => {
-      // 獲取readAsArrayBuffer產生的結果，並用來渲染PDF
-      const typedarray = new Uint8Array(fileReader.result);
-      setPdf(typedarray);
-    });
-    drawSign();
+  const pdfDownload = () => {
+    let canvas = document.querySelector('.rpv-core__canvas-layer > canvas');
+    const image = canvas.toDataURL('image/png');
+    let canvasTwo = document.querySelector('canvas');
+    const imageTwo = canvasTwo.toDataURL('image/png');
+    const pdf = new jsPDF();
+    // 設定背景在 PDF 中的位置及大小
+    const width = pdf.internal.pageSize.width;
+    const height = pdf.internal.pageSize.height;
+    pdf.addImage(image, 'png', 0, 0, width, height);
+    pdf.addImage(imageTwo, 'png', 0, 0, width, height);
+    // 將檔案取名並下載
+    pdf.save('download.pdf');
   };
 
   const defaultLayoutPluginInstance = defaultLayoutPlugin();
@@ -73,23 +70,23 @@ export default function Pdf() {
 
   return (
     <div className="relative h-full ">
-      <input type="file" name="" id="" onChange={fileChange} accept="application/pdf" />
+      <button onClick={pdfDownload}>download</button>
       <div className="fixed bottom-5 right-5 z-40">
         <p className=" h-13 w-13 flex cursor-pointer items-center justify-center rounded-full bg-black p-3 uppercase text-white hover:bg-slate-200 hover:text-black">
           open
         </p>
       </div>
-      <canvas id="canvasTw" width="1500" height="1500" className="absolute top-10 left-0 z-10"></canvas>
+      <canvas id="canvasTw" width="553" height="783" className="fixed top-[50px] left-[100%] z-10 "></canvas>
       <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.1.81/build/pdf.worker.min.js">
         <div
-          className=" flex justify-items-center"
+          className=" relative flex justify-items-center"
           style={{
             border: '1px solid rgba(0, 0, 0, 0.3)',
             height: '90vh'
           }}
         >
           <Viewer
-            fileUrl={pdf}
+            fileUrl={file}
             defaultScale={SpecialZoomLevel.PageFit}
             plugins={[defaultLayoutPluginInstance, customCanvasPluginInstance]}
           />

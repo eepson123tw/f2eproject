@@ -1,34 +1,58 @@
-import React, { useContext, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import React, { useContext, useState, useRef } from 'react';
 import { modalContext } from '../../utils/modalContext';
 export default function ProcessModal() {
-  const { hasShow, setShow } = useContext(modalContext);
-  let [searchParams, setSearchParams] = useSearchParams();
+  const { hasShow, setShow, setFile, setSignModel } = useContext(modalContext);
   let [processCount, setProcessCount] = useState(0);
+  let inputFile = useRef(null);
 
   const setCount = () => {
     setProcessCount((d) => {
-      d++;
-      if (d > 2) {
-        d = 0;
-      }
-
-      setTimeout(() => {
-        setSearchParams({ methods: 'sign' });
-        setShow(false);
-      }, 500);
-
+      d = 1;
       return d;
     });
+    inputFile.current.click();
+  };
+
+  const fileUpload = (e) => {
+    if (e.target.files[0] === undefined) return;
+    // 透過 input 所選取的檔案
+    const file = e.target.files[0];
+    // 產生fileReader物件
+    const fileReader = new FileReader();
+    // 將資料做處理
+    fileReader.readAsArrayBuffer(file);
+    // 綁入事件監聽
+    fileReader.addEventListener('load', () => {
+      // 獲取readAsArrayBuffer產生的結果，並用來渲染PDF
+      const typedarray = new Uint8Array(fileReader.result);
+      setFile(typedarray);
+
+      setShow(false);
+      setSignModel(true);
+    });
+  };
+
+  const resetFn = () => {
+    setShow((d) => !d);
+    setProcessCount(0);
   };
 
   return (
     hasShow && (
       <div className="fixed top-0 left-0  flex h-[100vh] w-[100vw] items-center justify-center ">
         <div className="absolute top-0 left-0 h-[100%] w-[100%] bg-black opacity-25"></div>
-        <div className="relative relative z-10 h-[700px] w-[1080px] rounded bg-slate-100 p-[100px]">
+        <input
+          type="file"
+          name=""
+          id=""
+          className="seo_hidden"
+          onChange={fileUpload}
+          ref={inputFile}
+          accept="application/pdf"
+        />
+        <div className="relative z-10 h-[700px] w-[1080px] rounded bg-slate-100 p-[100px]">
           <div className=" absolute top-3 right-5 text-3xl">
-            <i className="fa-solid fa-xmark  inline-block cursor-pointer" onClick={() => setShow((d) => !d)}></i>
+            <i className="fa-solid fa-xmark  inline-block cursor-pointer" onClick={resetFn}></i>
           </div>
           <ul className="process mb-[150px] mt-5 flex justify-between text-2xl">
             <li className={processCount >= 0 ? 'active' : ''}>上傳文件</li>

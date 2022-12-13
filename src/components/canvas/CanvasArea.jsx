@@ -1,10 +1,12 @@
 import React, { useContext, useState, useRef, useEffect } from 'react';
 import { modalContext } from '../../utils/modalContext';
+import { useSearchParams } from 'react-router-dom';
 export default function CanvasArea(props) {
   const canvasRef = useRef(null);
   // let isPainting = false;
   let [isPainting, setPainting] = useState(false);
   const { hasSignModelShow, setSignModel } = useContext(modalContext);
+  let [searchParams, setSearchParams] = useSearchParams();
 
   const buttonClass = `z-5 resetBtn absolute right-5 top-4 rounded ${
     isPainting ? ' bg-[#6C8268]' : ' bg-[#CFCFCF]'
@@ -23,6 +25,7 @@ export default function CanvasArea(props) {
     const newImg = canvas.toDataURL('image/png');
     localStorage.setItem(props.imgName, newImg);
     setSignModel(false);
+    setSearchParams({ methods: 'sign' });
   }
   useEffect(() => {
     const canvas = canvasRef.current;

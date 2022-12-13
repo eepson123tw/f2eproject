@@ -4,5 +4,7 @@ export const modalContext = createContext({
   hasShow: false,
   setShow: () => {},
   hasSignModelShow: true,
-  setSignModel: () => {}
+  setSignModel: () => {},
+  file: {},
+  setFile: () => {}
 });

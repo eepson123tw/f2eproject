@@ -10,7 +10,7 @@ export default function SignModel() {
 
   return (
     hasSignModelShow && (
-      <div className="fixed top-0 left-0  flex h-[100vh] w-[100vw] items-center justify-center ">
+      <div className="fixed top-0 left-0  z-40 flex h-[100vh] w-[100vw] items-center  justify-center">
         <div className="absolute top-0 left-0 h-[100%] w-[100%] bg-black opacity-25"></div>
         <div className="relative  z-10 h-[543px] w-[876px]  rounded bg-slate-100">
           <h2 className="py-2 px-4">新增新的簽名檔</h2>
